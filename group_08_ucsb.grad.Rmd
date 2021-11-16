@@ -1,12 +1,12 @@
 ---
-title: "Group 08 UCSB domestic grad enrollment"
+title: "Group 08 UCSB Domestic Grad Enrollment"
 author: "Indra Boving & Katheryn Moya"
 date: "11/15/2021"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 # Attach packages
 
@@ -19,12 +19,12 @@ library(tidyverse)
 ucsb_grad <- read_csv(here("data","ucsb_grad_data.csv"))
 ```
 
-```{r, fig.cap = "Domestic enrollment (individual counts) at UC Santa Barbara between 2008 and 2019 by race/enthnicity."}
+```{r, fig.cap = "**Figure 1.** Race and ethnic makeup of domestic enrollment at UC Santa Barbara between 2008 and 2019 (by proportion) ."}
 ggplot(ucsb_grad, aes(y = domestic_enrollment, x = year_abbr, fill = ethnicity)) +
   geom_col(position = "fill") +
   labs(x = "Year",
        y = "Domestic Enrollment", 
-       title = "UCSB Domestic Enrollment Rates by Enthnicity") +
+       title = "UCSB Domestic Enrollment Rates by Race and Enthnicity") +
   theme_minimal()
 ```
 
